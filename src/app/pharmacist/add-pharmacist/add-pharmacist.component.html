@@ -1,0 +1,16 @@
+<div class="container">
+    <h2>Add New Pharmacist</h2>
+    <form [formGroup]="pharmacistForm" (submit)="addpharm()">
+        <label for="Name">Name:</label>
+        <input class="form-control" type="text" id="Name" name="Name" required formControlName="Name"><br><br>
+
+        <label for="Email">Email:</label>
+        <input class="form-control" type="text" id="Email" name="Email" required formControlName="Email"><br><br>
+        
+        <label for="Location">Location:</label>
+        <input class="form-control" type="text" id="Location" name="Location" required formControlName="Location"><br><br>
+        
+        <button type="submit" class="btn">Submit</button>
+        <input type="reset" value="Reset">
+</form>
+</div>

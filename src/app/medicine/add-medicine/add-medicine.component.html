@@ -1,0 +1,19 @@
+<div class="container">
+    <h2>Add Medicine</h2>
+    <form [formGroup]="medicineForm" (submit)="submit()">
+        <label for="Name">Name:</label>
+        <input class="form-control" type="text" id="Name" name="Name" required formControlName="Name"><br><br>
+
+        <label for="Description">Description:</label>
+        <textarea class="form-control" id="Description" name="Description" required formControlName="Description"></textarea><br><br>
+        
+        <label for="Manufacturer">Manufacturer:</label>
+        <input class="form-control" type="text" id="Manufacturer" name="Manufacturer" required formControlName="Manufacturer"><br><br>
+ 
+        <label for="Barcode">Barcode:</label>
+        <input class="form-control" type="text" id="Barcode" name="Barcode" required formControlName="Barcode"><br><br>
+        
+        <button type="submit" class="btn">Submit</button>
+        <input type="reset" value="Reset">
+</form>
+</div>
