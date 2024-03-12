@@ -1,0 +1,51 @@
+<barcode-scanner-livestream type="code_128" (valueChanges)="onValueChanges($event)"></barcode-scanner-livestream>
+<div [hidden]="!barcodeValue">
+  {{barcodeValue}}
+</div>
+
+<div class="btn-group">
+  <button (click)="onStarted()">Start Camera</button>
+  <button (click)="onStop()">Stop Camera</button>
+</div>
+<div class="row justify-content-center m-0" *ngIf="medicineDetails">
+  <div class="col-7 mt-2">
+      <div class="display-4 mb-2">
+        {{medicineDetails.Name}}
+      </div>
+      <!-- <div class=" d-flex justify-content-start align-items-center mb-2 p-1 ">
+          <span class="h5 me-2 mb-0">Mnufacturer:- {{medicineDetails.Manufacturer}}</span>
+      <hr class="">
+          <div class=" d-flex justify-content-start align-items-center mb-2 p-1 ps-0">Description:- {{medicineDetails.Description}}
+          </div>
+          <div class=" d-flex justify-content-start align-items-center mb-2 p-1 ps-0">Location:- {{medicineDetails.Location}}
+          </div>
+          <div class=" d-flex justify-content-start align-items-center mb-2 p-1 ps-0">Quantity:- {{medicineDetails.Quantity}}
+          </div>
+      </div> -->
+
+  </div>
+  <!-- <p>Table is just a mapping of objects to table rows with <code>&#64;for</code></p> -->
+
+  <table class="table table-striped" *ngIf="medicineDetails">
+    <thead>
+      <tr>
+        <th scope="col">#</th>
+        <th scope="col">Name </th>
+        <th scope="col">Description</th>
+            <th scope="col">Manufacturer</th>
+        <th scope="col">Location</th>
+            <th scope="col">Quantity</th>
+      </tr>
+    </thead>
+    <tbody>
+      <tr >
+        <th scope="row">1</th>
+        <td>{{ medicineDetails.Name }}</td>
+        <td>{{ medicineDetails.Description }}</td>
+        <td>{{ medicineDetails.Manufacturer }}</td>
+            <td>{{ medicineDetails.Location }}</td>
+            <td>{{ medicineDetails.Quantity }}</td>
+      </tr>
+    </tbody>
+  </table>
+  

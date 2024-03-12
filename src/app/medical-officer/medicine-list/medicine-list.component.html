@@ -1,0 +1,19 @@
+<div class="section">
+    <h1 class="row d-flex justify-content-center align-items-center ">Click to check stock for any medicine!</h1>
+<div class="row d-flex justify-content-center align-items-center ">
+    <table class="table m-4 w-50 col-5">
+        <tr>
+            <th>ID</th>
+            <th>Medicine Name</th>
+            <th></th>
+        </tr>
+        <tr *ngFor="let medicine of medicineData">
+            <td>{{medicine.ID}}</td>
+            <td>{{medicine.Name}}</td>
+            <td><button class="btn btn-outline-success" [routerLink]="['\scan']">View Details</button></td>
+        </tr>
+    </table>
+    <!-- <app-employee-nx [selectedEmployee]="selectedEmployee" class="col-5" *ngIf="selectedEmployee"></app-employee-nx> -->
+</div>
+
+</div>
