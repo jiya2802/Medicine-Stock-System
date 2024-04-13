@@ -1,6 +1,7 @@
 import { Component, OnInit } from '@angular/core';
 import { AuthService } from '../auth.service';
 import { FormControl, FormGroup } from '@angular/forms';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-signin',
@@ -8,8 +9,8 @@ import { FormControl, FormGroup } from '@angular/forms';
   styleUrls: ['./signin.component.css']
 })
 export class SigninComponent implements OnInit{
-  signForm!: FormGroup;
-  constructor(private authService: AuthService) {}
+  signForm!:FormGroup;
+  constructor(private authService: AuthService,private router:Router) {}
 
   ngOnInit(): void {
     this.createForm()
@@ -17,17 +18,18 @@ export class SigninComponent implements OnInit{
 
   createForm():void{
     this.signForm = new FormGroup({
-      userType : new FormControl(),
-      contact: new FormControl(),
-      email: new FormControl(),
-      password: new FormControl(),
-      location: new FormControl()
+      UserType : new FormControl(),
+      ContactNumber: new FormControl(),
+      Email: new FormControl(),
+      Password: new FormControl(),
+      Location: new FormControl()
     })}
 
-  // sign():void{
-  //   this.authService.submit(this.signForm.value).subscribe((value)=>{
-  //     console.log("submitted..")
-  //   })
-  // }
+  sign():void{
+    this.authService.submit(this.signForm.value).subscribe((value)=>{
+      console.log("submitted..");
+      this.router.navigate(['/login'])
+    })
+  }
 
 }

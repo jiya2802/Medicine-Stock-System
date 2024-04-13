@@ -1,0 +1,24 @@
+<!-- <app-navbar></app-navbar> -->
+    <div class="navbar">
+        <div class="navbar-logo-container">
+            <img src="https://static.vecteezy.com/system/resources/previews/019/194/969/original/three-persons-admin-icon-color-outline-vector.jpg" alt="Medical Officer Logo" class="navbar-logo">
+        </div>
+        
+        <a href="#dashboard">Dashboard</a>
+        <a href="#medicine" [routerLink]="['/medicine']">Medicine</a>
+        <a href="#supplier" [routerLink]="['/pharmacist']">pharmacist</a>
+       
+    </div>
+
+    <!-- Dashboard -->
+    <div class="dashboard">
+        <div class="dashboard-item">
+            <i class="fas fa-medkit dashboard-icon"></i>
+            <a class="dashboard-link" [routerLink]="['/medicine']">Add new Medicine</a>
+        </div>
+        <div class="dashboard-item">
+            <i class="fas fa-users dashboard-icon"></i>
+            <a  class="dashboard-link" [routerLink]="['/pharmacist']">Add new Pharmacist</a>
+        </div>
+   
+    </div>

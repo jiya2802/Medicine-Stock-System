@@ -1,0 +1,27 @@
+  <!-- Side Navigation Menu Bar -->
+  <div class="navbar">
+    <div class="navbar-logo-container">
+        <img src="https://en.pimg.jp/066/521/392/1/66521392.jpg" alt="Medical Officer Logo" class="navbar-logo">
+    </div>
+    
+    <a href="#dashboard">Dashboard</a>
+    <a href="#view-medicines" [routerLink]="['/pharmacist/medicines']">View All Medicines</a>
+    <a href="#sell-medicine" [routerLink]="['/pharmacist/sell']">Sell Medicine</a>
+    <a href="#out-of-stock" [routerLink]="['/pharmacist/outOfStock']">Out of Stock</a>
+</div>
+
+<!-- Dashboard -->
+<div class="dashboard">
+    <div class="dashboard-item">
+        <i class="fas fa-eye dashboard-icon"></i>
+        <a href="#view-medicines" class="dashboard-link" [routerLink]="['/pharmacist/medicines']"> View All Medicines</a>
+    </div>
+    <div class="dashboard-item">
+        <i class="fas fa-handshake dashboard-icon"></i>
+        <a href="#sell-medicine" class="dashboard-link" [routerLink]="['/pharmacist/sell']">Sell Medicine</a>
+    </div>
+    <div class="dashboard-item">
+        <i class="fas fa-exclamation-triangle dashboard-icon"></i>
+        <a href="#out-of-stock" class="dashboard-link" [routerLink]="['/pharmacist/outOfStock']">Out of Stock</a>
+    </div>
+</div>

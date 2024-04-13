@@ -1,0 +1,8 @@
+<div>
+    <video #video autoplay playsinline></video>
+    <canvas #canvas hidden></canvas>
+  
+    <button (click)="stopScanner()">Stop Scanner</button>
+    <p *ngIf="barcode">Scanned Barcode: {{ barcode }}</p>
+  </div>
+  

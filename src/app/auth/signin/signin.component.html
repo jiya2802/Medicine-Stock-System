@@ -1,35 +1,34 @@
 <div class="container1">
     <div class="container">
         <h1>Medicine Stock System for Health Centers</h1>
-        <!-- <form [formGroup]="signForm" (submit)="sign()"> -->
+        <form [formGroup]="signForm" (submit)="sign()">
             <label>Who are you?</label>
             <br>
             <br>
-            <input type="radio" id="pharmacist" name="userType" value="pharmacist" required formControlName="userType">
-            <label for="pharmacist">Pharmacist</label>
-            <input type="radio" id="medicalOfficer" name="userType" value="medicalOfficer" required formControlName="userType">
-            <label for="medicalOfficer" >Medical Officer</label>
-            <input type="radio" id="admin" name="userType" value="admin" required formControlName="userType">
-            <label for="admin">Admin</label>
+            <input type="radio" id="pharmacist" name="UserType" value="Pharmacist" required formControlName="UserType">
+            <label for="Pharmacist">Pharmacist</label>
+            <input type="radio" id="medicalOfficer" name="UserType" value="Medical Officer" required formControlName="UserType">
+            <label for="Medical Officer" >Medical Officer</label>
+            <input type="radio" id="admin" name="UserType" value="Admin" required formControlName="UserType">
+            <label for="Admin">Admin</label>
             <br>
             <br>
             <label for="contactNumber">Contact Number</label>
-            <input type="text" id="contactNumber" name="contactNumber" required formControlName="contact">
+            <input type="text" id="contactNumber" name="ContactNumber" required formControlName="ContactNumber">
     
             <label for="email">Email ID</label>
-            <input type="email" id="email" name="email" required formControlName="email">
+            <input type="email" id="email" name="Email" required formControlName="Email">
     
             <label for="password">Password</label>
-            <input type="password" id="password" name="password" required formControlName="password">
+            <input type="password" id="password" name="Password" required formControlName="Password">
 
             <label for="location">Location</label>
-            <input type="text" id="location" name="location" required formControlName="location">
+            <input type="text" id="location" name="Location" required formControlName="Location">
     
             <button type="submit">Sign Up</button>
-        <!-- </form> -->
-    
+        </form>
         <div class="login-link">
-            Already have an account? <a href="login.html">Login</a>
+            Already have an account? <a href="login.html" [routerLink]="['/login']">Login</a>
         </div>
     </div>
 </div>

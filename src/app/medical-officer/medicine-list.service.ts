@@ -19,4 +19,8 @@ export class MedicineListService {
   getMedicineFromBarcode(barcodeValue: any):Observable<MedicineDetails>{
     return this.http.get<MedicineDetails>(`http://localhost:8080/api/medicine/${barcodeValue}`);
   }
+
+  // getMedicineDetails(barcodeValue: any):Observable<MedicineDetails>{
+  //   return this.http.get<MedicineDetails>(`http://localhost:8080/api/getmedicines`);
+  // }
 }

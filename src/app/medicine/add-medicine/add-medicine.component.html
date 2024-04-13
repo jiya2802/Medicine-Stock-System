@@ -1,6 +1,6 @@
 <div class="container">
     <h2>Add Medicine</h2>
-    <form [formGroup]="medicineForm" (submit)="submit()">
+    <form [formGroup]="medicineForm" (ngSubmit)="submit()" novalidate>
         <label for="Name">Name:</label>
         <input class="form-control" type="text" id="Name" name="Name" required formControlName="Name"><br><br>
 
@@ -15,5 +15,7 @@
         
         <button type="submit" class="btn">Submit</button>
         <input type="reset" value="Reset">
-</form>
+    </form>
+    <div *ngIf="successMessage" class="alert alert-success">{{ successMessage }}</div>
+    <div *ngIf="errorMessage" class="alert alert-success">{{ errorMessage }}</div>
 </div>

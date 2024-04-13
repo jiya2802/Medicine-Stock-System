@@ -1,5 +1,5 @@
-import { Component, OnInit } from '@angular/core';
-import { FormControl, FormGroup } from '@angular/forms';
+import { Component } from '@angular/core';
+import { FormBuilder, FormGroup, Validators } from '@angular/forms';
 import { MedicineService } from '../medicine.service';
 
 @Component({
@@ -7,27 +7,33 @@ import { MedicineService } from '../medicine.service';
   templateUrl: './add-medicine.component.html',
   styleUrls: ['./add-medicine.component.css']
 })
-export class AddMedicineComponent implements OnInit {
+export class AddMedicineComponent {
+  medicineForm: FormGroup;
+  successMessage: string = '';
+  errorMessage: string = '';
 
-  medicineForm!: FormGroup;
-  constructor(private medicineService: MedicineService) {}
-
-  ngOnInit(): void {
-    this.createForm()
+  constructor(private fb: FormBuilder, private medicineService: MedicineService) {
+    this.medicineForm = this.fb.group({
+      Name: ['', Validators.required],
+      Description: ['', Validators.required],
+      Manufacturer: ['', Validators.required],
+      Barcode: ['', Validators.required]
+    });
   }
 
-  createForm():void{
-    this.medicineForm = new FormGroup({
-      Name : new FormControl(),
-      Description: new FormControl(),
-      Manufacturer: new FormControl(),
-      Barcode: new FormControl()
-    })}
-
-  submit():void{
-    this.medicineService.submit(this.medicineForm.value).subscribe((value)=>{
-      console.log("submitted..")
-    })
+  submit(): void {
+    this.medicineService.submit(this.medicineForm.value).subscribe(
+      response => {
+        console.log("Response from API:", response);
+        this.successMessage = 'Medicine added successfully.';
+        this.errorMessage = ''; // Clear any previous error message
+        this.medicineForm.reset();
+      },
+      error => {
+        console.error("Medicine successfully added", error);
+        this.errorMessage = 'Medicine successfully added';
+        this.successMessage = ''; // Clear any previous success message
+      }
+    );
   }
-
 }

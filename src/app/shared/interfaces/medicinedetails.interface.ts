@@ -3,5 +3,6 @@ export interface MedicineDetails{
     Description:String,
     Manufacturer:String,
     Location:String,
-    Quantity:number
+    Quantity:number,
+    Barcode:String
 }

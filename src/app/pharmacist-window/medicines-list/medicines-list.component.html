@@ -1,0 +1,13 @@
+<div class="row row-cols-1 row-cols-md-2 row-cols-lg-3 row-cols-xl-4">
+    <div class="col mb-4" *ngFor="let medicine of medicineData">
+      <div class="card">
+        <!-- <img src="./images/medicine3.avif" class="card-img-top" alt="..."> -->
+        <div class="card-body flex">
+          <h5 class="card-title">{{medicine.Name}}</h5>
+          <p class="card-text"></p>
+          <a class="col-6 text-end" href="#" [routerLink]="['/Medicine',medicine.ID]"><i class="fa-2x fa-solid fa-arrow-up-right-from-square" style="color: #000000;"></i></a>
+        </div>
+      </div>
+    </div>
+  </div>
+  

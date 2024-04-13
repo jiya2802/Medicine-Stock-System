@@ -1,0 +1,24 @@
+<div *ngIf="outOfStockMedicines.length > 0">
+    <h2 class="bg-danger text-white"><i class="fa-solid fa-triangle-exclamation  p-2"></i>Out of Stock Medicines</h2>
+    <div *ngFor="let medicine of outOfStockMedicines" class="alert alert-danger d-flex align-items-center" role="alert">
+      <!-- <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Danger:"><use xlink:href="#exclamation-triangle-fill"/></svg> -->
+       <div class="fs-3">
+      </div>
+      <div class="card border-danger mb-3 col-md-12 w-75" >
+        <div class="card-header fs-3">Name: {{ medicine.Name }}</div>
+        <div class="card-body text-danger">
+          <h5 class="card-title">Quantity {{medicine.Quantity}}</h5>
+          <p class="card-text">Description: {{ medicine.Description }}</p>
+          <p class="card-text">Manufacturer: {{ medicine.Manufacturer }}</p>
+          <p class="card-text">Barcode: {{ medicine.Barcode }}</p>
+        </div>
+      </div>
+    </div>
+  </div>
+  <div *ngIf="outOfStockMedicines.length === 0" class="alert alert-success d-flex align-items-center m-4" role="alert">
+    <svg class="bi flex-shrink-0 me-2" role="img" aria-label="Success:"><use xlink:href="#check-circle-fill"/></svg>
+    <div class="fs-3">
+        <i class="fa-solid  fa-circle-check"></i> No medicines are out of stock.
+    </div>
+  </div>
+  
